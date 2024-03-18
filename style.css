@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+}
+.container{
+    height: 100%;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.header{
+    background-color: bisque;
+    grid-column: 2/4;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+
+}
+.body{
+    padding: 10px;
+    background-color: gray;
+    grid-row: 2/4;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+
+}
+.body div{
+    border:1px solid white;
+}
+.sidebar{
+    background-color:blue;
+    grid-row: 1/4;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+
+}
+.sidebar div{
+    border: 1px solid white;
+}
+.searchBar{
+    background-color: beige;
+}
+.projects{
+    grid-row: 1/4;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,250px));
+    gap: 20px;
+    
+}
+.announcements{
+    grid-row: 1/3;
+    display: grid;
+    gap: 5px;
+}
+.card{
+    height: 150px;
+    background-color: #fff;
+}
+ul li{
+    color: white;
+    list-style: none;
+}
+h1{color: white;}
+.a-card{
+    background-color: white;
+    width: 80%;
+}
+.profile{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+.profile div{
+    padding: 0;
+}
+.headermenu ul{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
