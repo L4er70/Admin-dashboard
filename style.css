@@ -9,13 +9,13 @@ body{
     height: 100%;
     background-color: aquamarine;
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 7fr;
 }
 .header{
     background-color: bisque;
     grid-column: 2/4;
     display: grid;
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows:1fr 1fr;
 
 }
 .body{
@@ -33,15 +33,60 @@ body{
     background-color:#1992d4;
     grid-row: 1/4;
     display: grid;
-    grid-template-rows: repeat(3,1fr);
+    grid-template-rows: 1fr 2fr 3fr;
+    justify-content: center;
+    
 
 }
-.sidebar div{
-    border: 1px solid white;
+
+
+.sidebar ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
 }
 .searchBar{
-    background-color: beige;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
 }
+
+.searchBar img{
+    height: 30px;
+}
+.left{
+    flex: 1 1 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 15px;
+}
+
+.left #magnify{
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    
+}
+.left input{
+    border-radius: 10px;
+    border-style: none;
+    padding: 5px 5px ;
+}
+.right{
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    align-items: start;
+    font-size: 22px;
+}
+.right #profilePic{
+    height: 50px;
+    border-radius: 45%;
+}
+
 .projects{
     grid-row: 1/4;
     display: grid;
@@ -101,4 +146,31 @@ img{
 .icons ul{
     display: flex;
     gap: 2px;
+}
+.greet img{
+    height: 25px;
+
+}
+.sidebar button{
+    font-size: 18px;
+    border:none;
+    background-color: #1992d4;
+    color: white;
+
+    
+}
+.sidebar li{
+    display: flex;
+    gap: 10px;
+    
+}
+.dashboard{
+    display: flex;
+    align-items: center;
+}
+.menu{
+    
+}
+.settings{
+    
 }
