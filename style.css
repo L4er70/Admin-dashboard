@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *{
     margin: 0;
@@ -13,19 +16,25 @@ body{
     height: 100%;
     background-color: aquamarine;
     display: grid;
-    grid-template-columns: 1fr 7fr;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 200px 1fr;
+    grid-template-areas: 
+    'side header'
+    'side main';
 }
 .header{
     background-color: bisque;
-    grid-column: 2/4;
+    grid-area: header;
     display: grid;
-    grid-template-rows:1fr 1fr;
+    grid-template-areas:
+    "search profile"
+    "greeting buttons";
 
 }
 .body{
     padding: 10px;
     background-color: #e2e8f0;
-    grid-row: 2/4;
+    grid-area: main;
     display: grid;
     grid-template-columns: 4fr 2fr;
 
@@ -35,7 +44,7 @@ body{
 }
 .sidebar{
     background-color:#1992d4;
-    grid-row: 1/4;
+    grid-area: side;
     display: grid;
     grid-template-rows: 1fr 2fr 3fr;
     justify-content: center;
@@ -51,21 +60,45 @@ body{
     
 }
 .searchBar{
+    grid-area: search;
     padding: 30px 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content:flex-start;
     background-color: whitesmoke;
 }
 
 .searchBar img{
     height: 30px;
 }
+.searchBar input{
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+}
 .left{
-    flex: 1 1 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    grid-area: buttons;
     padding-top: 15px;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.left ul{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+}
+.left button{
+    width: 90px;
+    border: none;
+    background-color:#1992d4;
+    padding: 10px;
+    border-radius: 20px;
+    color: #e2e8f0;
+    font-weight: 500;
+    font-size: 18px;
 }
 
 .left #magnify{
@@ -80,32 +113,59 @@ body{
     padding: 5px 5px ;
 }
 .right{
+    grid-area: profile;
     display: flex;
     gap: 20px;
-    padding: 15px;
-    align-items: start;
+    padding: 30px;
+    align-items: center;
+    justify-content: flex-end;
     font-size: 22px;
 }
 .right #profilePic{
     height: 50px;
     border-radius: 45%;
 }
+.right #bell{
+    height: 30px;
+}
 
 .projects{
     grid-row: 1/4;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px,250px));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
+}
+.cardContainer{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 .announcements{
     grid-row: 1/3;
     display: grid;
     gap: 5px;
+    justify-items: center;
 }
 .card{
-    height: 150px;
+    border-left-color:yellow ;
+    border-radius: 10px;
+    flex: 1;
+    min-height: 150px;
+    max-height: 300px;
+    min-width: 200px;
+    max-width: 350px;
     background-color: #fff;
+}
+.card button{
+    border: none;
+    background-color: #fff;
+    margin: 5px;
+}
+.card img{
+    height: 20px;
 }
 ul li{
     color: white;
@@ -113,27 +173,28 @@ ul li{
 }
 h1{color: white;}
 .a-card{
+    display: flex;
     background-color: white;
-    width: 80%;
+    width: 90%;
+    height:1fr;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+.a-card strong{
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
 }
 .profile{
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 20px;
-    padding-bottom: 0;
+    grid-area: greeting;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    
 
 
 }
 .profile div{
     padding: 0;
-}
-.headermenu ul{
-    display: flex;
-    justify-content: space-evenly;
-    
 }
 img{
     height:15px;
@@ -172,9 +233,11 @@ img{
     display: flex;
     align-items: center;
 }
-.menu{
-    
+.greet{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
 }
-.settings{
-    
+.greet img{
+    height:40px ;
 }
